@@ -25,13 +25,14 @@ export class AddEditDataComponent implements OnInit {
     let Id = localStorage.getItem("id");
     this.addEdit = (Id) ? "Update" : "Create";
     this.getDataById(Id);
+    
     this.dataForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       familyName: ['', [Validators.required]],
       Address: ['', [Validators.required]],
       countryOfOrigin: ['', [Validators.required]],
       emailAddress: ['', [Validators.required, Validators.email]],
-			age: ['', [Validators.required],[Validators.min(20),],[Validators.max(60)]],
+      age: ['Please enter valid age', [Validators.required, Validators.min(20), Validators.max(60)]],
 			hired: [''],
 		});
   }
@@ -39,6 +40,7 @@ export class AddEditDataComponent implements OnInit {
   {
     if (Id!= null){
     this.dataService.getDataById(Id)
+
     .subscribe(
       data => {
         debugger
@@ -72,5 +74,10 @@ export class AddEditDataComponent implements OnInit {
       );
     this.applyData = new ApplyData();
     
+  }
+
+  //Reset
+  onReset(): void {
+    this.dataForm.reset();
   }
 }

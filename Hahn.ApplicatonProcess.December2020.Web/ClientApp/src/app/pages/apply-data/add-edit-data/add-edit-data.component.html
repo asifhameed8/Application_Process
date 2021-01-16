@@ -3,55 +3,50 @@
     <label class="label" for="input_name">Name:</label>
     <div class="control">
       <input [(ngModel)]="applyData.name" class="input form-control"
-       type="text" formControlName="name" placeholder="Enter name."
-        required>
+             type="text" formControlName="name" placeholder="Enter name"
+             required>
     </div>
   </div>
   <div class="field">
     <label class="label" for="familyName">Family Name:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.familyName" class="input form-control" placeholder="Enter Family Name." formControlName="familyName"
-      >
+      <input [(ngModel)]="applyData.familyName" class="input form-control" placeholder="Enter Family Name" formControlName="familyName">
     </div>
   </div>
   <div class="field">
     <label class="label" for="address">Address:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.address" class="input form-control" type="text" formControlName="Address" placeholder="Enter Address."
-        >
+      <input [(ngModel)]="applyData.address" class="input form-control" type="text" formControlName="Address" placeholder="Enter Address">
     </div>
   </div>
   <div class="field">
     <label class="label" for="countryOfOrigin">Country Of Origin:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.countryOfOrigin" class="input form-control" type="text" formControlName="countryOfOrigin" placeholder="Enter Country Of Origin."
-        >
+      <input [(ngModel)]="applyData.countryOfOrigin" class="input form-control" type="text" formControlName="countryOfOrigin" placeholder="Enter Country Of Origin">
     </div>
   </div>
   <div class="field">
     <label class="label" for="emailAddress">Email Address:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.emailAddress" class="input form-control" type="text" formControlName="emailAddress" placeholder="Enter Email Address."
-        >
+      <input [(ngModel)]="applyData.emailAddress" class="input form-control" type="email" formControlName="emailAddress" placeholder="Enter Email Address">
     </div>
   </div>
   <div class="field">
     <label class="label" for="age">Age:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.age" class="input form-control" type="text" formControlName="age" placeholder="Enter Email Age."
-        >
+      <input [(ngModel)]="applyData.age" class="input form-control" type="number" formControlName="age" placeholder="Enter Age">
     </div>
   </div>
   <div class="field">
     <label class="label" for="hired">Hired:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.hired" class="" type="checkbox" formControlName="hired" 
-        >
+      <input [(ngModel)]="applyData.hired" class="" type="checkbox" formControlName="hired">
     </div>
   </div>
   <br>
-  
+
   <button [disabled]="!dataForm.valid" class="button is-link" type="submit" (click)="onSubmit()">{{addEdit}}</button>
-  <button class="button is-link" type="button"  [routerLink]="['/applydata']" style="margin-left: 10px;">Back</button>
+  <button class="button is-link" type="submit" (click)="onReset()" style="margin-left: 10px;">Reset</button>
+  <button class="button is-link" type="button" [routerLink]="['/applydata']" style="margin-left: 10px;">Back</button>
 
 </form>
