@@ -1,0 +1,28 @@
+<div class="columns margin_card">
+    <section class="column" id="">
+
+        <button class="btn" (click)="addData()">Add Applcaint Data</button>
+      <h3 class="title is-3 aligncenter">Applicant Form</h3>
+      <table mdbTable class="table">
+        <thead>
+          <tr>
+            <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr mdbTableCol *ngFor="let item of formData">
+            <td>{{item.name}}</td>
+            <td>{{item.familyName}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.countryOfOrigin}}</td>
+            <td>{{item.emailAddress}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.hired}}</td>
+            <td><i class="fa fa-edit" aria-hidden="true" (click)="edit(item.id)"></i>
+              <i class="fa fa-trash" aria-hidden="true" (click)="deleteFormData(item)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>

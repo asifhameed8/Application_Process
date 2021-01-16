@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Hahn.ApplicatonProcess.December2020.Data/bin/Debug
+/Hahn.ApplicatonProcess.December2020.Data/obj
+/Hahn.ApplicatonProcess.December2020.Domain/bin/Debug
+/Hahn.ApplicatonProcess.December2020.Domain/obj
+/.vs/Hahn.ApplicatonProcess.Application/v15
+/.vs/ApplicationProcess/v16
+/.vs/Hahn.ApplicatonProcess.Application/v16
+/.vs
+/node_modules
