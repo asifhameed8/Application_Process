@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { debug } from 'console';
 import { ApplyData } from 'src/app/model/apply-data';
 import { ApplyDataService } from 'src/app/services/apply-data-service/apply-data-service';
 
@@ -16,6 +17,7 @@ export class AddEditDataComponent implements OnInit {
   addEdit = '' ;
   isValidateName = false;
   dataForm: FormGroup;
+  enable= false;
   submitted = false;
   constructor(private router: Router, private dataService:ApplyDataService, private formBuilder: FormBuilder) 
   {
@@ -34,7 +36,8 @@ export class AddEditDataComponent implements OnInit {
       emailAddress: ['', [Validators.required, Validators.email]],
       age: ['Please enter valid age', [Validators.required, Validators.min(20), Validators.max(60)]],
 			hired: [''],
-		});
+    });
+    this.onChanges();
   }
   getDataById(Id:any)
   {
@@ -76,8 +79,21 @@ export class AddEditDataComponent implements OnInit {
     
   }
 
+  onChanges(): void {
+    debugger;
+    this.dataForm.valueChanges.subscribe(val => {
+      if ((val.name == null || val.name == "") && (val.familyName == null || val.familyName == "") && (val.Address == null || val.Address == "") && (val.countryOfOrigin == null || val.countryOfOrigin == "") && (val.emailAddress == null || val.emailAddress == "") && (val.age == null || val.age == "")) {
+        this.enable = true;
+      }
+      else {
+        this.enable = false;
+      }
+    });
+  }
   //Reset
   onReset(): void {
-    this.dataForm.reset();
+    if (confirm("Are you really sure to reset all the data")) {
+      this.dataForm.reset();
+    }
   }
 }

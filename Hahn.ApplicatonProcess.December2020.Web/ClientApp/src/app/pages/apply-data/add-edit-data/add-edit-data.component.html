@@ -2,7 +2,7 @@
   <div class="field">
     <label class="label" for="input_name">Name:</label>
     <div class="control">
-      <input [(ngModel)]="applyData.name" class="input form-control"
+      <input [(ngModel)]="applyData.name" (change)="enableReset()" class="input form-control"
              type="text" formControlName="name" placeholder="Enter name"
              required>
     </div>
@@ -46,7 +46,7 @@
   <br>
 
   <button [disabled]="!dataForm.valid" class="button is-link" type="submit" (click)="onSubmit()">{{addEdit}}</button>
-  <button class="button is-link" type="submit" (click)="onReset()" style="margin-left: 10px;">Reset</button>
+  <button [disabled]="enable" class="button is-link" type="submit" (click)="onReset()" style="margin-left: 10px;">Reset</button>
   <button class="button is-link" type="button" [routerLink]="['/applydata']" style="margin-left: 10px;">Back</button>
 
 </form>
