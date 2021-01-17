@@ -1,8 +1,11 @@
-Three layered project 
+<h1>Application Architecture</h1>
+
+Three Tier Architecture is used in the project 
 - Web
 - Business logic
 - Data layer
-Added Swagger (localhost/swagger)
+
+I have added Swagger (localhost/swagger)
 Used Exception Handling 
 Used Logging
 Used InMemoryDatabase with three bydefault records
