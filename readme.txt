@@ -6,11 +6,12 @@ Three Tier Architecture is used in the project
 - Data layer
 
 I have added Swagger (localhost/swagger)
-Used Exception Handling 
-Used Logging
-Used InMemoryDatabase with three bydefault records
+- Used Exception Handling 
+- Used Logging
+- Used InMemoryDatabase with three bydefault records
 
-Open project in vs 2019
-npm install automatically run on project build
-localhost:44373 url is for front end 
-localhost:44373/swagger is for backend
+<b>How to run the project</b>
+-Open project in vs 2019
+-npm install automatically run on project build
+-localhost:44373 url is for front end 
+-localhost:44373/swagger is for backend
